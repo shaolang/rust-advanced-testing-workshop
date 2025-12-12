@@ -2,7 +2,11 @@
 use std::str::FromStr;
 
 mockall::mock! {
-    // TODO!
+    Parsed {}
+    impl FromStr for Parsed {
+        type Err = ();
+        fn from_str(s: &str) -> Result<Self, <MockParsed as FromStr>::Err>;
+    }
 }
 
 #[cfg(test)]

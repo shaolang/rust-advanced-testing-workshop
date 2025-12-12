@@ -62,6 +62,7 @@ mod tests {
                 ids: Default::default(),
             });
         let repository = Repository::new(&mock_client, caller_id);
+        mock_client.checkpoint();
 
         mock_client
             .expect_get_permissions()
